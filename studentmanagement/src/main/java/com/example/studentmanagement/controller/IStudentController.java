@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface IStudentController {
     public Student addStudent(@RequestBody Student student);
+    public List<Student> getStudents();
 }

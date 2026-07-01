@@ -22,12 +22,21 @@ public class StudentController implements IStudentController{
     private IStudentService studentService;
 
 
+
     // CREATE
+
     @PostMapping
     public Student addStudent(@RequestBody Student student){
         return studentService.createStudent(student);
     }
 
+
+
+    // READ
+    @GetMapping
+    public List<Student> getStudents(){
+        return studentService.getStudents();
+    }
 
 
 }

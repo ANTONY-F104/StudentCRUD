@@ -5,6 +5,8 @@ import com.example.studentmanagement.repository.StudentRepository;
 import com.example.studentmanagement.service.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 public class StudentService implements IStudentService {
 
     @Autowired
@@ -12,5 +14,9 @@ public class StudentService implements IStudentService {
 
     public Student createStudent(Student student){
         return repository.save(student);
+    }
+
+    public List<Student> getStudents(){
+        return repository.findAll();
     }
 }
