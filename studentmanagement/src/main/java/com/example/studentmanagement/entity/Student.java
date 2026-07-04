@@ -10,11 +10,12 @@ public class Student {
 
 
     @Id
-    private int id;
+    public int id;
 
     private String name;
 
     private String department;
+
 
 
     public int getId() {

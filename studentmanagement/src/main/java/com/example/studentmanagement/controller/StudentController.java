@@ -4,13 +4,10 @@ package com.example.studentmanagement.controller;
 import java.util.List;
 
 import com.example.studentmanagement.service.IStudentService;
-import com.example.studentmanagement.service.Impl.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.studentmanagement.entity.Student;
-import com.example.studentmanagement.repository.StudentRepository;
-
 
 
 @RestController
@@ -36,6 +33,18 @@ public class StudentController implements IStudentController{
     @GetMapping
     public List<Student> getStudents(){
         return studentService.getStudents();
+    }
+// update
+    @PutMapping("/{id}")
+    public Student updatestudent (@PathVariable int id,@RequestBody Student student){
+        return studentService.updatestudent(id,student);
+    }
+//    delete
+    @DeleteMapping("/{id}")
+public String Deletestudent(@PathVariable int id)
+    {
+       studentService.Deletestudent(id);
+       return "Your record deleted successfully";
     }
 
 
